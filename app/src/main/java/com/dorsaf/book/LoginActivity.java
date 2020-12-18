@@ -25,6 +25,7 @@ public class LoginActivity extends AppCompatActivity {
         initView();
 
     }
+    int x=1;
 
     private void  initView(){
         EditEmail= findViewById(R.id.edit_email);
