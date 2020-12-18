@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.dorsaf.book.MainActivity"
+    tools:showIn="@layout/activity_main">
+
+
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/RecyclerViewID"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.agrawalsuneet.loaderspack.loaders.SearchLoader
+                android:id="@+id/searchStuff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                app:search_defaultStartLoading="true"
+                app:search_lensBorderWidth="6dp"
+                app:search_lensColor="#856358"
+                app:search_lensHandleLength="60dp"
+                app:search_lensRadius="40dp"
+                app:search_xRangeToSearch="350dp"
+                app:search_yRangeToSearch="500dp"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="135dp"
+                tools:layout_editor_absoluteY="267dp" />
+
+            <TextView
+                android:id="@+id/waitingID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:gravity="center"
+                android:textColor="#7E635B"
+                android:text="@string/waiting_string"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+        </android.support.v7.widget.CardView>
+    </FrameLayout>
+</android.support.constraint.ConstraintLayout>

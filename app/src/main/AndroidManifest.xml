@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.mybook.book">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@drawable/book"
+        android:label="My library"
+        android:roundIcon="@drawable/book"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name="com.dorsaf.book.SplashScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.dorsaf.book.LoginActivity"
+            android:parentActivityName="com.dorsaf.book.LoginActivity"/>
+
+        <activity android:name="com.dorsaf.book.ViewActivity"
+            android:label="ViewActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name="com.dorsaf.book.BookDetailActivity"
+            android:label="@string/title_activity_book_detail"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:parentActivityName="com.dorsaf.book.MainActivity"/>
+        <activity
+            android:name="com.dorsaf.book.MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths"/>
+        </provider>
+    </application>
+
+</manifest>
