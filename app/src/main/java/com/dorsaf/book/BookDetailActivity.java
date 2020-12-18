@@ -44,8 +44,8 @@ public class BookDetailActivity extends AppCompatActivity {
     private TextView bookAuthor;
     private TextView bookPublisher;
     private TextView bookPages;
-    private FloatingActionButton shareButton;
-    private FloatingActionButton viewButton;
+    //private FloatingActionButton shareButton;
+  //  private FloatingActionButton viewButton;
 
 
     private RequestQueue queue;
@@ -63,26 +63,6 @@ public class BookDetailActivity extends AppCompatActivity {
         bookAuthor = (TextView) findViewById(R.id.authorID);
         bookPublisher = (TextView) findViewById(R.id.publishedByID);
         bookPages = (TextView) findViewById(R.id.pagesID);
-
-
-        //Floating Action buttons
-        shareButton = (FloatingActionButton) findViewById(R.id.shareID);
-        viewButton = (FloatingActionButton) findViewById(R.id.viewID);
-
-        shareButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                shareIntent();
-            }
-        });
-
-        viewButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                viewIntent(book.getBookIMDB());
-            }
-        });
-
 
         //Get the Book intent
         book = (Book) getIntent().getSerializableExtra("Book");
